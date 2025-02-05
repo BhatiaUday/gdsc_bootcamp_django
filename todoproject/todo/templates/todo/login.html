@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+    <p>You are already logged in. Redirecting you to the tasks page...</p>
+    <script>
+        setTimeout(function(){
+            window.location.href = "{% url 'todo_list' %}";
+        }, 2000);
+    </script>
+{% else %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+{% endif %}

@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the To-Do App</h1>
+    <p>Number of users: {{ user_count }}</p>
+    <a href="{% url 'signup' %}">Sign Up</a> |
+    <a href="{% url 'login' %}">Login</a>
+</body>
+</html>
